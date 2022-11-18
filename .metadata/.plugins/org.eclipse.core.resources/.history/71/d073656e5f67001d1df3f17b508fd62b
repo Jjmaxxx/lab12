@@ -17,7 +17,6 @@ public class FamilyTree
         
         public TreeNode(String name)
         {
-        	//justin's code
             this.name = name;
             children = new ArrayList<>();
         }

@@ -17,7 +17,6 @@ public class FamilyTree
         
         public TreeNode(String name)
         {
-        	//justin's code
             this.name = name;
             children = new ArrayList<>();
         }
@@ -102,7 +101,7 @@ public class FamilyTree
 	//
 	// Displays a file browser so that user can select the family tree file.
 	//
-	public FamilyTree(String s) throws IOException, TreeException
+	public FamilyTree(String s) throws IOException
 	{
 		// User chooses input file. This block doesn't need any work.
 		FileNameExtensionFilter filter = 
