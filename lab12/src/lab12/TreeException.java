@@ -1,9 +1,12 @@
-package trees;
+package lab12;
 
-public class TreeException extends ???
+import java.io.IOException;
+
+public class TreeException extends FamilyTree
 {
-	public TreeException(String s)
+	public TreeException(String s) throws IOException
 	{
 		// Pass s into a superclass ctor.
+		super(s);
 	}
 }

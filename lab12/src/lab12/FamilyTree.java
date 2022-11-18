@@ -1,4 +1,4 @@
-package trees;
+package lab12;
 
 import java.util.*;
 import java.io.*;
@@ -16,7 +16,7 @@ public class FamilyTree
         private ArrayList<TreeNode>        children;
         
         
-        TreeNode(String name)
+        public TreeNode(String name)
         {
             this.name = name;
             children = new ArrayList<>();
@@ -31,6 +31,8 @@ public class FamilyTree
         
         void addChild(TreeNode childNode)
         {
+        	children.add(childNode);
+        	childNode.parent = this;
             // Add childNode to this node's children list. Also
             // set childNode's parent to this node.
         }
@@ -41,12 +43,15 @@ public class FamilyTree
         TreeNode getNodeWithName(String targetName)
         {
             // Does this node have the target name?
-            if (?????)
+            if (name == targetName)
                 return this;
                     
             // No, recurse. Check all children of this node.
             for (TreeNode child: children)
             {
+            	if(child.getNodeWithName(targetName) != null) {
+            		return child;
+            	}
                 // If child.getNodeWithName(targetName) returns a non-null node,
                 // then that's the node we're looking for. Return it.
             }
@@ -93,7 +98,7 @@ public class FamilyTree
 	//
 	// Displays a file browser so that user can select the family tree file.
 	//
-	public FamilyTree() throws IOException, TreeException
+	public FamilyTree(String s) throws IOException, TreeException
 	{
 		// User chooses input file. This block doesn't need any work.
 		FileNameExtensionFilter filter = 
